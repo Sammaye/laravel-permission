@@ -21,7 +21,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "sammaye\\Permission\\PermissionServiceProvider"
+        "sammaye\\Permission\\Providers\\PermissionServiceProvider"
       ],
       "aliases": {
       }
