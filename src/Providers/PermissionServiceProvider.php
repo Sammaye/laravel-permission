@@ -1,11 +1,11 @@
 <?php
 namespace sammaye\Permission\Providers;
 
-use App\Console\Commands\AssignPerrmission;
-use App\Console\Commands\AssignRole;
-use App\Console\Commands\AssignRolePermission;
-use App\Console\Commands\RefreshPermission;
 use Illuminate\Support\Facades\Schema;
+use sammaye\Permission\Console\AssignPerrmission;
+use sammaye\Permission\Console\AssignRole;
+use sammaye\Permission\Console\AssignRolePermission;
+use sammaye\Permission\Console\RefreshPermission;
 use sammaye\Permission\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
