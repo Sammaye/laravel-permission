@@ -5,7 +5,7 @@ Really simple permissions (RBAC) plugin for Laravel.
 
 ### Configure
 
-You can find the configuration in `config/sammaye.permission.php` and it is called like `config('sammaye.permission.permissions)` to get a list of configured default permisisons.
+You can find the configuration in `config/sammaye.permission.php` and it is called like `config('sammaye.permission.permissions')` to get a list of configured default permissions.
 
 #### Adding Permissions/Roles
 
