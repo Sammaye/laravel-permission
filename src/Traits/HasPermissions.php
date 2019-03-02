@@ -1,6 +1,9 @@
 <?php
 namespace sammaye\Permission\Traits;
 
+use sammaye\Permission\Role;
+use sammaye\Permission\Permission;
+
 trait HasPermissions
 {
     public function roles()
