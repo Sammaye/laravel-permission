@@ -18,7 +18,7 @@ class PermissionServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            realpath(DIR .'/../../config/config.php') => config_path('sammaye.permission.php')
+            realpath(__DIR__ .'/../../config/config.php') => config_path('sammaye.permission.php')
         ]);
 
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
