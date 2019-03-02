@@ -2,7 +2,7 @@
 namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
-use Sammaye\Permission\Permission;
+use sammayePermission\Permission;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AssignPerrmission extends Command

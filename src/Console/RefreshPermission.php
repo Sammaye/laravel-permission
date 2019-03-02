@@ -2,8 +2,8 @@
 namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
-use Sammaye\Permission\Permission;
-use Sammaye\Permission\Role;
+use sammayePermission\Permission;
+use sammayePermission\Role;
 
 class RefreshPermission extends Command
 {

@@ -6,7 +6,7 @@ use App\Console\Commands\AssignRole;
 use App\Console\Commands\AssignRolePermission;
 use App\Console\Commands\RefreshPermission;
 use Illuminate\Support\Facades\Schema;
-use Sammaye\Permission\Permission;
+use sammaye\Permission\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
