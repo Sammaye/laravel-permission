@@ -5,7 +5,7 @@
   "authors": [
     {
       "name": "Sammaye",
-      "email": "public@sammaye.com"
+      "homepage": "https://sammaye.com"
     }
   ],
   "require": {
@@ -24,7 +24,6 @@
         "sammaye\\Permission\\PermissionServiceProvider"
       ],
       "aliases": {
-        "Flash": "sammaye\\Flash\\Flash"
       }
     }
   }
