@@ -1,5 +1,4 @@
 <?php
-
 namespace Sammaye\Permission;
 
 use Illuminate\Database\Eloquent\Model;

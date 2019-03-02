@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Console\Commands;
+namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
 use Sammaye\Permission\Permission;

@@ -1,6 +1,5 @@
 <?php
-
-namespace Sammaye\Permission\Providers;
+namespace sammaye\Permission\Providers;
 
 use App\Console\Commands\AssignPerrmission;
 use App\Console\Commands\AssignRole;
