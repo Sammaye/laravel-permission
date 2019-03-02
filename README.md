@@ -17,7 +17,7 @@ If you're not using the default `User` model then you change the `user` key.
 
 ### Add `User` Trait
 
-Add `sammayePermission\Traits\HasPermission` to your user model.
+Add `sammaye\Permission\Traits\HasPermission` to your user model.
 
 ### Finish
 
