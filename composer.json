@@ -1,6 +1,7 @@
 {
   "name": "sammaye/laravel-permission",
   "description": "A quick Laravel permissions plugin",
+  "keywords": ["laravel"],
   "license": "MIT",
   "authors": [
     {
