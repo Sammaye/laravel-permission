@@ -20,17 +20,4 @@ class Permission extends Model
     {
         $this->belongsToMany(config('sammaye.permission.role'));
     }
-
-    public static function setGates()
-    {
-        Gate::before(function ($user, $ability) {
-            return $user->hasPermission('root') ?: null;
-        });
-
-        foreach (static::all() as $perm) {
-            Gate::define($perm->name, function ($user) use ($perm) {
-                return $user->hasPermission($perm->name);
-            });
-        }
-    }
 }

@@ -32,6 +32,18 @@ class PermissionServiceProvider extends ServiceProvider
             ]);
         }
 
-        config('sammaye.permission.permission')::setGates();
+        $permissionClassName = config('sammaye.permission.permission');
+
+        if (Schema::hasTable((new $permissionClassName)->getTable())) {
+            Gate::before(function ($user, $ability) {
+                return $user->hasPermission('root') ?: null;
+            });
+
+            foreach ($permissionClassName::all() as $perm) {
+                Gate::define($perm->name, function ($user) use ($perm) {
+                    return $user->hasPermission($perm->name);
+                });
+            }
+        }
     }
 }
