@@ -9,4 +9,6 @@ return [
     ],
 
     'user' => \App\User::class,
+    'permission' => \sammaye\Permission\Permission::class,
+    'role' => \sammaye\Permission\Role::class,
 ];

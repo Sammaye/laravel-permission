@@ -2,7 +2,6 @@
 namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
-use sammaye\Permission\Role;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AssignRole extends Command
@@ -48,7 +47,9 @@ class AssignRole extends Command
             }
         }
 
-        $role = Role::updateOrCreate(['name' => $this->argument('name')]);
+        $role = config('sammaye.permission.role')::updateOrCreate(
+            ['name' => $this->argument('name')]
+        );
 
         if ($user) {
             $user->roles()->attach($role);

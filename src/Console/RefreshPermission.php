@@ -2,8 +2,6 @@
 namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
-use sammaye\Permission\Permission;
-use sammaye\Permission\Role;
 
 class RefreshPermission extends Command
 {
@@ -42,11 +40,11 @@ class RefreshPermission extends Command
         foreach ($permissions_map as $k => $v) {
             if (is_numeric($k)) {
                 // Simple permission
-                Permission::updateOrCreate(['name' => $v]);
+                config('sammaye.permission.permission')::updateOrCreate(['name' => $v]);
             } else {
-                $role = Role::updateOrCreate(['name' => $k]);
+                $role = config('sammaye.permission.role')::updateOrCreate(['name' => $k]);
                 foreach ($v as $pv) {
-                    $permission = Permission::updateOrCreate(['name' => $pv]);
+                    $permission = config('sammaye.permission.permission')::updateOrCreate(['name' => $pv]);
                     $role->permissions()->attach($permission);
                 }
             }

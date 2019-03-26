@@ -8,12 +8,12 @@ trait HasPermissions
 {
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(config('sammaye.permission.role'));
     }
 
     public function permissions()
     {
-        return $this->belongsToMany(Permission::class);
+        return $this->belongsToMany(config('sammaye.permission.permission'));
     }
 
     public function hasRole($name)

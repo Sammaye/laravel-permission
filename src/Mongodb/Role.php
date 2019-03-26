@@ -1,7 +1,7 @@
 <?php
-namespace sammaye\Permission;
+namespace sammaye\Permission\Mongodb;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Role extends Model
 {

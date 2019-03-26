@@ -2,8 +2,6 @@
 namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
-use sammaye\Permission\Permission;
-use sammaye\Permission\Role;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AssignRolePermission extends Command
@@ -39,8 +37,8 @@ class AssignRolePermission extends Command
      */
     public function handle()
     {
-        $role = Role::find($this->argument('role_id'));
-        $permission = Permission::find($this->argument('permission_id'));
+        $role = config('sammaye.permission.role')::find($this->argument('role_id'));
+        $permission = config('sammaye.permission.permission')::find($this->argument('permission_id'));
 
         if (!$role) {
             throw new NotFoundHttpException('Role not found');

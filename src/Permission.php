@@ -2,6 +2,8 @@
 namespace sammaye\Permission;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Schema;
 
 class Permission extends Model
 {
@@ -16,6 +18,21 @@ class Permission extends Model
 
     public function roles()
     {
-        $this->belongsToMany(Role::class);
+        $this->belongsToMany(config('sammaye.permission.role'));
+    }
+
+    public static function setGates()
+    {
+        if (Schema::hasTable((new static)->getTable())) {
+            Gate::before(function ($user, $ability) {
+                return $user->hasPermission('root') ?: null;
+            });
+
+            foreach (static::all() as $perm) {
+                Gate::define($perm->name, function ($user) use ($perm) {
+                    return $user->hasPermission($perm->name);
+                });
+            }
+        }
     }
 }

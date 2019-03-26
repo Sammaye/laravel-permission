@@ -2,7 +2,6 @@
 namespace sammaye\Permission\Console;
 
 use Illuminate\Console\Command;
-use sammaye\Permission\Permission;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AssignPerrmission extends Command
@@ -48,7 +47,9 @@ class AssignPerrmission extends Command
             }
         }
 
-        $permission = Permission::updateOrCreate(['name' => $this->argument('name')]);
+        $permission = config('sammaye.permission.permission')::updateOrCreate(
+            ['name' => $this->argument('name')]
+        );
 
         if ($user) {
             $user->permissions()->attach($permission);
