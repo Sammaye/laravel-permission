@@ -1,4 +1,9 @@
 <?php
+
+use App\User;
+use sammaye\Permission\Permission;
+use sammaye\Permission\Role;
+
 return [
     'permissions' => [
         'root',
@@ -8,7 +13,7 @@ return [
         ],
     ],
 
-    'user' => \App\User::class,
-    'permission' => \sammaye\Permission\Permission::class,
-    'role' => \sammaye\Permission\Role::class,
+    'user' => User::class,
+    'permission' => Permission::class,
+    'role' => Role::class,
 ];
