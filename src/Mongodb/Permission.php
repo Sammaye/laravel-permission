@@ -2,11 +2,12 @@
 namespace sammaye\Permission\Mongodb;
 
 use Jenssegers\Mongodb\Eloquent\Model;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Schema;
+use sammaye\Permission\Traits\HasObjectId;
 
 class Permission extends Model
 {
+    use HasObjectId;
+
     protected $fillable = [
         'name'
     ];
